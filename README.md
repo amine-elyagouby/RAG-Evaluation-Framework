@@ -1,5 +1,8 @@
 # RAG-Evaluation-Framework
 
+
+## Illustration of the study conducted to evaluate Retrieval-Augmented Generation
+(RAG) systems.
 ![image](https://github.com/user-attachments/assets/eeb31faf-cf0d-440d-b486-5d3955399632)
 
 <p align="center">
