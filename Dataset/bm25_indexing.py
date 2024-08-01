@@ -27,6 +27,6 @@ def index_corpus(corpus_path, index_path, generator = json_generator):
     index_ref = iter_indexer.index(generator(corpus_path), fields=['text'])
     return index_ref
 
-json_path = 'corpus_chunks_2.json'
+json_path = 'corpus_chunks.json'
 index_path = './bm25_index'
 index_ref = index_corpus(json_path, index_path, json_generator)
