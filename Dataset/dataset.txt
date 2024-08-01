@@ -1,7 +1,0 @@
-Thle link to download the dataset and the corpus is :
-
-https://www.kaggle.com/datasets/amineelyagouby/rag-evaluation-data
-
-
-
-
