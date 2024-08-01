@@ -5,18 +5,16 @@ from tqdm import tqdm
 from pathlib import Path
 
 
-def (sample, path = 'ir_scores/scores_bm25.json'):
+def get_C_P_1000 (path = 'ir_scores/scores_bm25.json'):
     C_1000 = []
-    P = []
     with open(path, 'rb') as file:
         for all_Ck in ijson.items(file, "all_Ck"):
-            for index,_ in sample:
-                C_1000.append(all_Ck[index][:10])
+            for CK in all_Ck:
+                C_1000.append(Ck[:10])
 
     with open(path, 'rb') as file:
         for all_P in ijson.items(file, "all_P"):
-            for index,_ in sample:
-                P.append(all_P[index])            
+            break         
     return C_1000, all_P
 
 def generate_answer(query , documents=0, llm = ChatOllama(model='llama3', temperature=0.0)):
@@ -76,22 +74,22 @@ with open("../data_corpus/hotpot_dev_distractor_v1.json", 'r') as file:
 
 print("Loading contexts...")
 print("Loading BM25 contexts...")
-C_1000_bm25, all_P_bm25 = get_C_P_sample(sample, path='../IR_Evaluation/ir_scores/scores_bm25.json')
+C_1000_bm25, all_P_bm25 = get_C_P_1000(path='../IR_Evaluation/ir_scores/scores_bm25.json')
 
 print("Loading SIM contexts...")
-C_1000_sim, all_P_sim = get_C_P_sample(sample, path='../IR_Evaluation/ir_scores/scores_sim.json')
+C_1000_sim, all_P_sim = get_C_P_1000(path='../IR_Evaluation/ir_scores/scores_sim.json')
 
 print("Loading MMR contexts...")
-C_1000_mmr, all_P_mmr = get_C_P_sample(sample, path='../IR_Evaluation/ir_scores/scores_mmr.json')
+C_1000_mmr, all_P_mmr = get_C_P_1000(path='../IR_Evaluation/ir_scores/scores_mmr.json')
 
 print("Loading REO contexts...")
-C_1000_reo, all_P_reo = get_C_P_sample(sample, path='../IR_Evaluation/ir_scores/scores_reo.json')
+C_1000_reo, all_P_reo = get_C_P_1000(path='../IR_Evaluation/ir_scores/scores_reo.json')
 
 print("Loading MLQ contexts...")
-C_1000_mlq, all_P_mlq = (path='ir_scores/scores_mlq.json')
+C_1000_mlq, all_P_mlq = get_C_P_1000(path='../IR_Evaluation/ir_scores/scores_mlq.json')
 
 
-print("Generating results for LLMOnly...")
+print("Generating results for LLM Only...")
 generate_answers(get_qa_data(data, all_P_mlq), 0, filename='llm_only_answers.json')
 
 print("Generating results for BM25...")
