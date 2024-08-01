@@ -17,7 +17,7 @@
 
 2. **Indexing:**
 
-### 1. BM25 Indexing
+* BM25 Indexing
 
    Create an index for BM25 using PyTerrier by running the following script:
 
@@ -25,7 +25,7 @@
    python bm25_indexing.py
    ```
 
-### 2. Faiss Indexing
+* Faiss Indexing
 
    Create a Faiss vector store index using embeddings for the other 4 retrievals based on similarity between embeddings. Run the following script:
 
