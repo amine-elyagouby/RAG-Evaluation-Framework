@@ -49,12 +49,7 @@ def get_score(P, Ck):
         score = average_subsentence_score(P, C)
         scores.append(score)
     return scores
-def get_score(P, Ck):
-    scores = []
-    for C in Ck:
-        score = average_subsentence_score(P, C)
-        scores.append(score)
-    return scores
+
 def get_scores_P_Ck(results):
     all_P = []
     all_Ck = []
