@@ -11,17 +11,17 @@ client = OpenAI(
 )
 
 with open("rag_answers/llm_bm25_answers.json", 'r') as file:
-    answers_bm25 = json.load(file)[2500:]
+    answers_bm25 = json.load(file)
 with open("rag_answers/llm_sim_answers.json", 'r') as file:
-    answers_sim = json.load(file)[2500:]
+    answers_sim = json.load(file)
 with open("rag_answers/llm_mmr_answers.json", 'r') as file:
-    answers_mmr = json.load(file)[2500:]
+    answers_mmr = json.load(file)
 with open("rag_answers/llm_mlq_answers.json", 'r') as file:
-    answers_mlq = json.load(file)[2500:]
+    answers_mlq = json.load(file)
 with open("rag_answers/llm_reo_answers.json", 'r') as file:
-    answers_reo = json.load(file)[2500:]
+    answers_reo = json.load(file)
 with open("rag_answers/llm_only_answers.json", 'r') as file:
-    answers_llm = json.load(file)[2500:]
+    answers_llm = json.load(file)
 
 prompt_template = """Task: Assess the candidate's answers based on the true answer, references, and scoring criteria, and return only the scores separated by commas.
 Question: "{question}" 
@@ -43,7 +43,7 @@ If the answer is fully correct, the score is 5.
 """
 
 all_scores = []
-output_file = "scores_2.txt"
+output_file = "gpt_scores.txt"
 
 # Ensure the file exists or create it if it doesn't
 if not os.path.exists(output_file):
@@ -82,5 +82,7 @@ for i in tqdm(range(len(answers_bm25)), total=len(answers_bm25), desc="gpt evalu
     with open(output_file, 'a') as f:
         f.write(','.join(map(str, scores)) + '\n')
 
-with open("all_scores_data_2.json", 'w') as json_file:
+"""
+with open("gpt_scores.json", 'w') as json_file:
      json.dump(all_scores, json_file, indent=4)
+"""
