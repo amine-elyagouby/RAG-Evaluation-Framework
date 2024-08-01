@@ -15,7 +15,7 @@
    python chunking.py
    ```
 
-2. **Indexing:*
+2. **Indexing:**
 
 ### 1. BM25 Indexing
 
