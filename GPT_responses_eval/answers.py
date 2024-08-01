@@ -58,7 +58,7 @@ def generate_answer(query , documents=0, llm = ChatOllama(model='llama3', temper
 def generate_results(qa_data,C_k=0, filename = 'llm_only_answers_sample.json'):
     results = []
     if C_k :
-        for (query, label_answer, supporting_facts), Ck in tqdm(zip(qa_data,C_k), total=len(qa_data), desc="level advance", position=0, leave=True):
+        for (query, label_answer, supporting_facts), Ck in tqdm(zip(qa_data,C_k), total=len(qa_data), desc="generating", position=0, leave=True):
             for C in Ck :
                 answer = generate_answer(query, C)
                 results.append({"query": query, 
