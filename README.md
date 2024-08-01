@@ -14,6 +14,13 @@ This folder contains:
 
 `IR_LLM_Evaluations_Analysis.ipynb`: Jupyter notebook presenting the IR and LLM evaluation results and the analysis of their relationship.
 
+You can run this notebook on Google Colab or in the Jupyter/Scipy-Notebook Docker container using:
+
+```sh
+docker run --network host --rm --gpus all -d -p 7880:8888 --shm-size=1g -e NVIDIA_VISIBLE_DEVICES=all --user root -e NB_UID=`id -u` -e NB_GID=`id -g`  -v "$PWD":/home/jovyan/scripts jupyter/scipy-notebook
+```
+
+or you can run it in any other Jupyter notebook environment.
 
 
 
