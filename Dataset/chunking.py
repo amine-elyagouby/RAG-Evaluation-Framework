@@ -104,13 +104,13 @@ def semantic_chunking(texts, buffer_size=1, percentile_threshold=95, embeddings=
     # Close the progress bar
     pbar.close()
     print('dump into a json file')
-    with open('corpus_chunks_2.json', 'w') as json_file:
+    with open('corpus_chunks.json', 'w') as json_file:
         json.dump(all_chunks, json_file, indent=4)
     print('end')
 
     return all_chunks
 
-with open('corpus_100k_1.json', 'r') as file:
+with open('corpus_100k.json', 'r') as file:
     documents = json.load(file)
 
 chunks = semantic_chunking(documents, buffer_size=3, percentile_threshold=80)
