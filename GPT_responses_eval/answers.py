@@ -72,7 +72,6 @@ with open("../data_corpus/hotpot_dev_distractor_v1.json", 'r') as file:
     data = json.load(file)
 
 
-print("Loading contexts...")
 print("Loading BM25 contexts...")
 C_1000_bm25, all_P_bm25 = get_C_P_1000(path='../IR_Evaluation/ir_scores/scores_bm25.json')
 
