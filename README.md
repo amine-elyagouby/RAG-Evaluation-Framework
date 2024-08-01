@@ -8,9 +8,11 @@ You can skip the experimentation for the evaluation of IR and LLM and find the r
 
 This folder contains:
 
-- `LLM_scores.json`: Evaluation using GPT-4 of the responses.
-- `ir_scores`: Folder containing JSON files of the IR scores calculated for the 5 retrievals at each level of N number of tokens, with N being 100, 200, and 1000.
-- `IR_LLM_Evaluations_Analysis.ipynb`: Jupyter notebook with the IR and LLM evaluation results and the analysis of their relationship.
+- `LLM_scores.json`: Evaluation results (scores) using GPT-4 of the responses.
+- `ir_scores`: Folder containing 5 JSON files of the IR scores calculated for the 5 retrievals at each level of N number of tokens, with N in {100, 200,..., 1000}.
+
+
+`IR_LLM_Evaluations_Analysis.ipynb`: Jupyter notebook presenting the IR and LLM evaluation results and the analysis of their relationship.
 
 
 
