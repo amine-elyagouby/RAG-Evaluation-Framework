@@ -1,6 +1,7 @@
 import json
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain.embeddings import SentenceTransformerEmbeddings
+from tqdm import tqdm
 embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
 import re
@@ -69,8 +70,6 @@ def chunk_text_based_on_distances(sentences, distances, percentile_threshold=95)
     return chunks
 
 # Main function to process a list of texts and perform semantic chunking
-from tqdm import tqdm
-
 def semantic_chunking(texts, buffer_size=1, percentile_threshold=95, embeddings=embeddings):
     all_chunks = []
     oaiembeds = embeddings
